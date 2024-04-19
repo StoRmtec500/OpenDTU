@@ -46,7 +46,7 @@ bool ConfigurationClass::write()
     JsonObject mdns = doc["mdns"].to<JsonObject>();
     mdns["enabled"] = config.Mdns.Enabled;
 
-    JsonObject modbus = doc.createNestedObject("modbus");
+    JsonObject modbus = doc["modbus"].to<JsonObject>();
     modbus["enabled"] = config.Fronius.Fronius_SM_Simulation_Enabled;
 
     JsonObject ntp = doc["ntp"].to<JsonObject>();
